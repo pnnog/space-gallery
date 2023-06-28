@@ -1,0 +1,33 @@
+.menu{
+  max-width: fit-content;
+  width: 100%;
+}
+
+
+.menu ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.menu li{
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+}
+
+.menu li:hover{
+  background: rgba(255, 255, 255, 0.158);
+  transform: translateX(.2rem);
+}
+
+.menu a{
+  color: white;
+  text-decoration: none;
+  font-size: 1.8rem;
+}
