@@ -1,6 +1,34 @@
+
+.main{
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
 .principal{
   display: flex;
   gap: 4rem;
   margin-left: 2.4rem;
   margin-right: 2.4rem;
+  margin-bottom: 4rem;
+
+}
+
+.gallery{
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  max-width: 140rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left:2.4rem;
+  padding-right:2.4rem;
+}
+
+
+@media (min-width: 768px){
+  .gallery{
+    display: flex;
+    flex-direction: row;
+  }
 }
