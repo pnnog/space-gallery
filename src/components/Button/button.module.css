@@ -1,0 +1,19 @@
+
+.button{
+  padding: 1rem;
+  border-radius: 1rem;
+  border: .2rem solid var(--color-purple);
+  background-color: transparent;
+  outline: 0;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: .2s ease-in-out;
+  font-family: var(--font-bold);
+  font-size: 1.4rem;
+  line-height: 1.3rem;
+}
+
+.button:hover{
+  background-color: var(--color-purple);
+}
+

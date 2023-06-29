@@ -1,7 +1,7 @@
 .card_wrapper {
   list-style: none;
   width: 100%;
-  box-shadow: .3rem .2rem .5rem var(--color-darkblue);
+  box-shadow: .3rem .2rem .5rem rgba(0, 0, 0, 0.25);
   background-color: var(--color-darkblue);
   border-radius: 1.8rem;
   transition: .18s ease-in-out;

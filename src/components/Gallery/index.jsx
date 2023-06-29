@@ -1,12 +1,13 @@
 import { useState } from 'react'
-import Cards from '../Cards'
-import Tags from '../Tags'
+
+import Cards from 'components/Cards'
+import Tags from 'components/Tags'
 import styles from './gallery.module.css'
 
 
-export function Gallery() {
+export default function Gallery() {
 
-  const [cards, setCards] = useState(
+  const [cards] = useState(
     [
       {
         "id": "1",
@@ -81,11 +82,21 @@ export function Gallery() {
     ]
   )
 
+  const [cardsFiltered, setCardsFiltered] = useState(cards)
+
+  const tags =[...new Set(cards.map(card=> card.tag))]
+
+
+  function cardsFilter(selectedTag) {
+    const cardsFiltered = cards.filter(card => card.tag === selectedTag)
+    setCardsFiltered(cardsFiltered)
+  }
+
   return (
     <section className={styles.gallery_wrapper}>
       <h2> Navegue pela galeria</h2>
-        <Tags />
-        <Cards cards ={cards}/>
+        <Tags tags = {tags}  handleOnClick ={cardsFilter} setCardsFiltered = {setCardsFiltered} cards={cards}/>
+        <Cards cards ={cardsFiltered} />
     </section>
   )
 }
