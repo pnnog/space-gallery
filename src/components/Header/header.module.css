@@ -2,15 +2,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 2rem 2.4rem;
 }
 
 .header img{
   max-width: 100%;
 }
 
-.buttons{
+.header .logo{
+  display: none;
+}
+
+.search_wrapper{
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -19,11 +22,9 @@
   padding: 1rem;
   height: 4rem;
   width: 100%;
-  max-width: 40rem;
-
 }
 
-.buttons input{
+.search_wrapper input{
   width: 100%;
   color: white;
   background-color: transparent;
@@ -33,7 +34,20 @@
   outline: 0;
 }
 
-.buttons input:focus{
+.search_wrapper input:focus{
  outline: 0;
  border: 0;
+}
+
+
+@media (min-width: 768px) {
+  .header .logo{
+    display: block;
+    max-width: 100%;
+  }
+
+
+  .search_wrapper{
+   max-width: 40rem;
+  }
 }

@@ -1,6 +1,7 @@
 .menu{
   max-width: fit-content;
   width: 100%;
+  margin-bottom: 4rem;
 }
 
 
@@ -30,4 +31,11 @@
   color: white;
   text-decoration: none;
   font-size: 1.8rem;
+}
+
+
+@media (min-width: 768px){
+  .menu{
+    margin-bottom: 0;
+  }
 }

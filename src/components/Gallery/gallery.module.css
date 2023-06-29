@@ -1,0 +1,19 @@
+.gallery_wrapper{
+  width: 100%;
+  max-width: 80%;
+  margin: auto;
+  padding-left:2.4rem;
+  padding-right:2.4rem;
+  
+}
+
+.gallery_wrapper h2{
+  color: var(--color-purple);
+  font-size: 2.4rem;
+  font-family: var(--font-regular);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+
+
