@@ -1,5 +1,3 @@
-:construction: Projeto em construção :construction:
-
 Este projeto tem como foco a estruturação de pastas em uma aplicação CRA, uso de estáticos como imagens e fontes em um projeto Reacte gerenciamento de estados.
 
 # :hammer: Funcionalidades do projeto
