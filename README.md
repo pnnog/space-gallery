@@ -10,7 +10,7 @@ Este projeto tem como foco a estruturação de pastas em uma aplicação CRA, us
 - CSS Modules
 
 # :open_file_folder: Acesso ao projeto
-Você pode acessar o código fonte do projeto original ou acessar ou baixá-lo
+Você pode acessar o código fonte do projeto original ou baixá-lo
 
 # :checkered_flag: Abrir e rodar o projeto
 
