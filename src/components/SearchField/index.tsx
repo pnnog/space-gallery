@@ -1,11 +1,11 @@
-import { ReactElement } from "react"
+import { InputHTMLAttributes, ReactElement } from "react"
 
 import * as S from './styles'
 
-interface SearchFieldProps{
+type SearchFieldProps = {
   icon?: ReactElement
   placeholder:string
-}
+} & InputHTMLAttributes<HTMLInputElement>
 
 
 const SearchField =  ({icon, placeholder}:SearchFieldProps) => 

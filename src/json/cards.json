@@ -1,0 +1,73 @@
+[
+
+  {
+    "title": "Grande Nuvem de Magalhães",
+    "author": "Alura Space",
+    "imagePath": "/images/cards/foto-1.png",
+    "id": "1",
+    "tagId": 2
+  },
+  {
+    "title": "Via Láctea",
+    "author": "Alura Space",
+    "imagePath": "/images/cards/foto-2.png",
+    "id": "2",
+    "tagId": 2
+  },
+  {
+    "title": "Lua: quarto minguante",
+    "author": "Alura Space",
+    "imagePath": "/images/cards/foto-3.png",
+    "id": "3",
+    "tagId": 3
+  },
+  {
+    "title": "Galáxia de Andrómeda",
+    "author": "Alura Space",
+    "imagePath": "/images/cards/foto-4.png",
+    "id": "4",
+    "tagId": 2
+  },
+  {
+    "title": "Estrela Pistola",
+    "author": "Alura Space",
+    "imagePath": "/images/cards/foto-5.png",
+    "id": "5",
+    "tagId": 1
+  },
+  {
+    "title": "Ilustração",
+    "author": "Alura Space",
+    "imagePath": "/images/cards/foto-6.png",
+    "id": "6",
+    "tagId": 4
+  },
+  {
+    "title": "Galáxia de Andrómeda",
+    "author": "Alura Space",
+    "imagePath": "/images/cards/foto-7.png",
+    "id": "7",
+    "tagId": 2
+  },
+  {
+    "title": "Ilustração",
+    "author": "Alura Space",
+    "imagePath": "/images/cards/foto-8.png",
+    "id": "8",
+    "tagId": 4
+  },
+  {
+    "title": "Céu estrelado",
+    "author": "Alura Space",
+    "imagePath": "/images/cards/foto-9.png",
+    "id": "9",
+    "tagId": 1
+  },
+  {
+    "title": "Ilustração",
+    "author": "Alura Space",
+    "imagePath": "/images/cards/foto-10.png",
+    "id": "10",
+    "tagId": 1
+  }
+]

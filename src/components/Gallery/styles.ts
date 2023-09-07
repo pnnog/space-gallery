@@ -5,7 +5,7 @@ export const GalleryWrapper =  styled.section`
 
 `
 
-export const Gallery =  styled.div`
+export const GalleryContent =  styled.div`
   display: flex;
   flex-direction: column;
   gap:5.4rem;
@@ -37,4 +37,16 @@ export const MostPopularColumn=  styled.section`
 
 `
 
+
+export const Cards = styled.ul`
+  display: grid;
+  grid-gap: 2.4rem;
+  width: 100%;
+  grid-template-columns: repeat(1, 1fr);
+
+
+  @media (min-width: 744px){
+   grid-template-columns: repeat(2, 1fr);
+  }
+` 
 

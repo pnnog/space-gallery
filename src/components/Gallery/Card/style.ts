@@ -5,14 +5,15 @@ export const CardWrapper =  styled.li`
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 1px 1px 10px rgb(0,0,0,0.7);
+  list-style: none;
 `
 
 type imageProps = {
-  image:string
+  $image:string
 }
 
 export const ImageBox =  styled.picture<imageProps>`
-  background-image: url(${({image}: imageProps)=> image });
+  background-image: url(${({$image}: imageProps)=> $image });
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -64,25 +65,8 @@ export const Buttons =  styled.div`
   justify-content: space-between;
   gap: 1.6rem;
 
-  >svg{
-    cursor: pointer;
-    transition: all .2s ease-in-out;
-    width: 1.6rem;
-    height: 1.6rem;
-    
-    &:hover{
-      scale: 1.3;
-    }
-  }
-
-
   @media (min-width: 1440px){
     gap: 2.4rem;
-
-    svg{
-      width: 2.4rem;
-      height: 2.4rem;
-    }
   }
 
 

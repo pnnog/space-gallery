@@ -1,22 +1,26 @@
-import Tag from './Tag'
+import tags from './tags.json'
 import * as S from './styles'
 
-type TagsProps ={
-  tags: Array<string>
+
+type TagsProps = {
+  cardsFilter:(id:string|number)=>void
 }
 
-export const Tags = ({tags}: TagsProps) =>{
+export const Tags = ({cardsFilter}:TagsProps) =>{
+
+  const handleClick = (tagId:number) =>{
+    cardsFilter(tagId)
+  }
+  
   return(
     <S.TagsWrapper>
       <S.TagsTitle> Busque por tags: </S.TagsTitle>
 
-      <S.Tags>
-        {tags.map((tag)=> <Tag key={tag}> {tag} </Tag> )}
-        <Tag $isActive>Todas</Tag>
-      </S.Tags>
-
+      <S.TagsContent>
+        {tags.map((tag)=> <S.Tag key={tag.id} onClick={()=> handleClick(tag.id)} > {tag.titulo} </S.Tag> )}
+      </S.TagsContent>
+      
     </S.TagsWrapper>
-    
   )
 }
 

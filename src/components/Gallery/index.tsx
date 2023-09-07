@@ -1,32 +1,49 @@
-import cardsJson from './cards.json'
-import { getNoRepeatedTags } from "../../utils/GetNoRepeatedTags"
 
 import Heading from "./Heading"
-import { Cards } from "./Cards"
 import MostPopular from "./MostPopular"
 import Tags from "./Tags"
 
+import { CardsJsonProps } from "../../App"
 import * as S from './styles'
+import Card from "./Card"
+import React, { SetStateAction } from "react"
+import { ModalCard } from "../Modal"
 
 
-const Gallery = () =>{
+type GalleryProps ={
+  filteredCards: CardsJsonProps
+  cardsFilter: (id: string | number)=> void
+  setSelectedCard: React.Dispatch<SetStateAction<ModalCard | null>>
+}
 
-  const tags = getNoRepeatedTags(cardsJson)
+const Gallery = ({filteredCards = [], cardsFilter, setSelectedCard}:GalleryProps) =>{
 
   return(
     <>
-      <Tags tags={tags} />
-      <S.Gallery>
+      <Tags cardsFilter ={cardsFilter} />
+      <S.GalleryContent>
         <S.CardsColumn>
           <Heading > Navegue pela galeria</Heading>
-          <Cards />
+          <S.Cards>
+            {filteredCards.map(card=> 
+              <Card
+                key={card.id} 
+                author={card.author} 
+                title={card.title} 
+                imagePath={card.imagePath}
+                setSelectedCard = {setSelectedCard}
+              /> 
+            )}
+          </S.Cards>
         </S.CardsColumn>
 
         <S.MostPopularColumn>
           <Heading $centralized>Populares</Heading>
-          <MostPopular $image="/images/cards/space.png"/>
+          <MostPopular $image="/images/cards/foto-1.png"/>
+          <MostPopular $image="/images/cards/foto-2.png"/>
+          <MostPopular $image="/images/cards/foto-3.png"/>
         </S.MostPopularColumn>
-      </S.Gallery>
+      </S.GalleryContent>
     </>
   )
 }

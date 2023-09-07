@@ -1,7 +1,7 @@
-import { ICards } from "../interfaces/cards"
+import { cardsJsonProps } from "../App"
 
 
-export const getNoRepeatedTags = (cards: ICards[])=>{
+export const getNoRepeatedTags = (cards: cardsJsonProps)=>{
   const cardsTags =  cards.map((card)=> card.tag)
 
   const noRepeteadTags = cardsTags.filter((tag, index )=>{
