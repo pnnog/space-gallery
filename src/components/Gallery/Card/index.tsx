@@ -11,7 +11,7 @@ export type CardProps = {
   title:string
   author:string,
   expanded?:boolean
-  setSelectedCard?: Dispatch<SetStateAction<ModalCard | null>>
+  setSelectedCard?: Dispatch<SetStateAction<ModalCard>>
 } 
 
 

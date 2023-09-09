@@ -8,11 +8,11 @@ type SearchFieldProps = {
 } & InputHTMLAttributes<HTMLInputElement>
 
 
-const SearchField =  ({icon, placeholder}:SearchFieldProps) => 
+const SearchField =  ({icon, placeholder, ...props}:SearchFieldProps) => 
   {
     return(
       <S.Wrapper>
-        <S.Input type="text" placeholder={placeholder} /> 
+        <S.Input type="text" placeholder={placeholder} {...props} /> 
         {icon && icon}
       </S.Wrapper>
     )

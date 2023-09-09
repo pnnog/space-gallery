@@ -1,6 +1,7 @@
 
 import { styled } from "styled-components"
 import * as CardStyles from '../Gallery/Card/style'
+import * as ButtonStyles from '../Button/styles'
 
 
 export const modifiers = {
@@ -9,7 +10,7 @@ export const modifiers = {
   `
 }
 
-export const ModalWrapper =  styled.dialog`
+export const Dialog =  styled.dialog`
 
   ${({open})=> !!open && modifiers.isOpen()};
   position: fixed;
@@ -23,7 +24,7 @@ export const ModalWrapper =  styled.dialog`
   bottom: 0;
 `
 
-export const ModalContent = styled.div`
+export const DialogContent = styled.div`
   position: absolute;
   top: 13.9rem;
   left: 50%;
@@ -55,5 +56,27 @@ export const ModalContent = styled.div`
     }
   }
  
+`
+
+
+export const CloseButtonWrapper = styled.div `
+  position: absolute;
+  right: 4.8rem;
+  top: 2.4rem;
+
+  ${ButtonStyles.Button}{
+    width: 2.4rem;
+    height: 2.4rem;
+
+
+    @media (min-width:744px){
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+
+  }
+
+
+
 `
 

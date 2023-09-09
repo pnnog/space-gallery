@@ -1,26 +1,26 @@
+import { Dispatch, SetStateAction } from "react"
 
 import Heading from "./Heading"
 import MostPopular from "./MostPopular"
 import Tags from "./Tags"
 
-import { CardsJsonProps } from "../../App"
+import { CardsJsonProps, Filter } from "../../App"
 import * as S from './styles'
 import Card from "./Card"
-import React, { SetStateAction } from "react"
 import { ModalCard } from "../Modal"
 
 
 type GalleryProps ={
   filteredCards: CardsJsonProps
-  cardsFilter: (id: string | number)=> void
-  setSelectedCard: React.Dispatch<SetStateAction<ModalCard | null>>
+  setFilter: Dispatch<SetStateAction<Filter>>
+  setSelectedCard: Dispatch<SetStateAction<ModalCard>>
 }
 
-const Gallery = ({filteredCards = [], cardsFilter, setSelectedCard}:GalleryProps) =>{
+const Gallery = ({filteredCards = [], setFilter, setSelectedCard}:GalleryProps) =>{
 
   return(
     <>
-      <Tags cardsFilter ={cardsFilter} />
+      <Tags setFilter ={setFilter} />
       <S.GalleryContent>
         <S.CardsColumn>
           <Heading > Navegue pela galeria</Heading>

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { Dispatch, SetStateAction, useState } from "react"
 
 import SearchField from "../SearchField"
 import {LiaSearchSolid} from 'react-icons/lia'
@@ -6,11 +6,15 @@ import {AiOutlineMenu} from 'react-icons/ai'
 import Menu from "./Menu"
 
 import * as S from './styles'
+import { Filter } from "../../App"
 
 
-const Cabecalho = () => {
+type CabecalhoProps = {
+  setFilter: Dispatch<SetStateAction<Filter>>
+}
+
+const Cabecalho = ({setFilter}:CabecalhoProps) => {
   
-
   const [menuIsOpen, setMenuIsOpen] = useState(false)
 
   return(
@@ -19,7 +23,10 @@ const Cabecalho = () => {
         <AiOutlineMenu onClick = {()=> setMenuIsOpen(true)} />
         <img src="/images/Logo.png" alt="Logo da página" />
       </S.HeaderContent>
-      <SearchField placeholder="O que você procura?" icon={<LiaSearchSolid />} />
+      <SearchField 
+        placeholder="O que você procura?" 
+        icon={<LiaSearchSolid />} 
+        onChange={(e)=> setFilter((state)=>({...state, search:e.target.value}))} />
 
       <Menu isOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
     </S.Wrapper>
