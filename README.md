@@ -1,27 +1,28 @@
-# React + TypeScript + Vite
+# A aplicação SpaceApp utiliza as mais modernas ferramentas no gerenciamento de estados, filtragem de listas e a interação entre as mesmas, reuso de componentes e afins. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## :hammer: Requisitos do projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `Filtro de imagens por texto`: Encontre o card desejado buscando através do título.
+- `Filtragem de imagens por tag`: Filtre os cards que são exibidos através da tag.
+- `Modal`: Expanda a visualização do card ao clicar no seu ícone de expansão sem perder o estado de "favoritado" ou "não favoritado", podendo inclusive alterar estado.
+- `Uso de typescript`: Maior confiabilidade e menor complexidade para compreender o código utilizando uma tipagem forte.
 
-## Expanding the ESLint configuration
+## :white_check_mark: Tecnologias utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React JS + VITE
+- Styled Components
+- Eslint
+- Typescript
 
-- Configure the top-level `parserOptions` property like this:
+## :open_file_folder: Acesso ao projeto
+Você pode acessar o código fonte do projeto original ou baixá-lo
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## :checkered_flag: Abrir e rodar o projeto
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Baixe os arquivos .zip do projeto no botão "CODE"
+- Instale as dependências com `npm i`
+- Rode o projeto com `npm run dev`
+
+## :globe_with_meridians: URL do projeto em produção
+https://space-gallery-iota.vercel.app/
