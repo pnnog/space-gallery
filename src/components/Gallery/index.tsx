@@ -1,26 +1,27 @@
-import { Dispatch, SetStateAction } from "react"
 
 import Heading from "./Heading"
 import MostPopular from "./MostPopular"
 import Tags from "./Tags"
 
-import { CardsJsonProps, Filter } from "../../App"
 import * as S from './styles'
+import { ICard } from "./Card/types"
 import Card from "./Card"
-import { ModalCard } from "../Modal"
+import { Filter } from "../../types"
 
 
 type GalleryProps ={
-  filteredCards: CardsJsonProps
-  setFilter: Dispatch<SetStateAction<Filter>>
-  setSelectedCard: Dispatch<SetStateAction<ModalCard>>
+  filter:Filter
+  filteredCards: ICard[]
+  onToggleFav:(card:ICard) => void
+  onToggleModal: (card:ICard) => void
+  onChangeFilter: (filter:Filter)=> void
 }
 
-const Gallery = ({filteredCards = [], setFilter, setSelectedCard}:GalleryProps) =>{
+const Gallery = ({ filter, onChangeFilter, onToggleFav, onToggleModal, filteredCards = [], }:GalleryProps) =>{
 
   return(
     <>
-      <Tags setFilter ={setFilter} />
+      <Tags onChangeFilter ={onChangeFilter} filter = {filter} />
       <S.GalleryContent>
         <S.CardsColumn>
           <Heading > Navegue pela galeria</Heading>
@@ -28,10 +29,9 @@ const Gallery = ({filteredCards = [], setFilter, setSelectedCard}:GalleryProps) 
             {filteredCards.map(card=> 
               <Card
                 key={card.id} 
-                author={card.author} 
-                title={card.title} 
-                imagePath={card.imagePath}
-                setSelectedCard = {setSelectedCard}
+                card={card}
+                onToggleFav={onToggleFav}
+                onToggleModal = {onToggleModal}
               /> 
             )}
           </S.Cards>

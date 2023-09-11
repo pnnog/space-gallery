@@ -1,32 +1,28 @@
 import {AiOutlineClose as CloseIcon} from 'react-icons/ai'
-import { Dispatch, SetStateAction } from "react"
 
-import { CardsJsonProps } from "../../App"
 import Button from "../Button"
 import Card from "../Gallery/Card"
 
+import { ModalProps } from './type'
 import * as S from './styles'
 
 
-export type ModalCard =  Pick<CardsJsonProps[0], 'title'| 'imagePath' | 'author'> | null
 
-type ModalProps = {
-  card: ModalCard 
-  setSelectedCard: Dispatch<SetStateAction<ModalCard>>
-}
-
-const Modal = ({card, setSelectedCard}:ModalProps) =>{
-
+const Modal = ({modalCard, onToggleFav, onToggleModal}:ModalProps) =>{
   
   return(
     <>
-      {!!card && (
-        <S.Dialog open ={!!card} >
+      {!!modalCard && (
+        <S.Dialog open ={!!modalCard} >
           <S.DialogContent>
             <S.CloseButtonWrapper> 
-              <Button  icon={<CloseIcon />} onClick={ () => setSelectedCard(null)}/>
+              <Button  icon={<CloseIcon />} onClick={ () => onToggleModal(null)} />
             </S.CloseButtonWrapper>
-            <Card author={card.author} title={card.title} expanded imagePath={card.imagePath}/>
+            <Card
+             expanded={true}
+             card={modalCard}
+             onToggleFav={()=> onToggleFav(modalCard)}
+            />
           </S.DialogContent>
         </S.Dialog>
       )}

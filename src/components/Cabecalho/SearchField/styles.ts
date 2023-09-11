@@ -8,8 +8,8 @@ export const Wrapper = styled.div`
   border-radius: 1rem;
   width: 100%;
   gap: 2rem;
-  padding: 1.2rem 1.6rem;
-
+  padding: 0 1.6rem;
+  
   @media (min-width: 744px) {
     max-width:42rem;
   }
@@ -28,8 +28,7 @@ export const Input = styled.input`
     border: none;
     color: white;
     font-size: 1.4rem;
-    height: 2rem;
-    padding: 0 .2rem;
+    height: 5.6rem;
 
     &::placeholder{
       color: #afafaf;

@@ -1,6 +1,6 @@
 import { styled } from "styled-components"
-import { TagProps } from "."
 import { DefaultTheme } from "styled-components/dist/types"
+import { TagProps } from "./types"
 
 
 

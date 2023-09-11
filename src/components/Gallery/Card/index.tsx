@@ -1,45 +1,36 @@
-import { Dispatch, SetStateAction } from 'react'
-import {AiOutlineHeart, AiOutlineExpand} from 'react-icons/ai'
-import { ModalCard } from '../../Modal'
+import {AiOutlineExpand} from 'react-icons/ai'
 import Button from '../../Button'
+import FavButton from '../../FavButton'
 
+import { CardProps } from './types'
 import * as S from './style'
 
-
-export type CardProps = {
-  imagePath:string
-  title:string
-  author:string,
-  expanded?:boolean
-  setSelectedCard?: Dispatch<SetStateAction<ModalCard>>
-} 
-
-
-const Card = ({imagePath, title, author, setSelectedCard, expanded = false}:CardProps) =>{
-
-
-  const handleClick = () =>{
-    !! setSelectedCard && setSelectedCard({title, author, imagePath})
-  }
+const Card = ({card, onToggleFav, onToggleModal, expanded = false }:CardProps) =>{
   
-
   return(
-      <S.CardWrapper>
-        <S.ImageBox $image = {imagePath}/>
-        <S.CardInfo>
-          <S.Description>
-            <p> {title}</p>
-            <span>{author}</span>
-          </S.Description>
+    <S.CardWrapper>
+      <S.ImageBox $image = {card.imagePath}/>
+      <S.CardInfo>
+        <S.Description>
+          <p> {card.title}</p>
+          <span>{card.author}</span>
+        </S.Description>
 
-          <S.Buttons>
-           <Button onClick={()=> console.log('oi')} icon={<AiOutlineHeart />} />
-           {!expanded  && <Button icon={<AiOutlineExpand />} onClick={handleClick} />}
-          </S.Buttons>
+        <S.Buttons>
+          <FavButton
+            active ={card.isFav}
+            onClick={()=> onToggleFav(card)} 
+          />
+
+          {!expanded && onToggleModal && <Button 
+            icon={<AiOutlineExpand />} 
+            onClick={()=> onToggleModal(card)} 
+          />}
           
-        </S.CardInfo>
-
-      </S.CardWrapper>
+        </S.Buttons>
+        
+      </S.CardInfo>
+    </S.CardWrapper>
   )
 }
 

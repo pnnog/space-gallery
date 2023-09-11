@@ -1,15 +1,5 @@
-import { LiHTMLAttributes } from 'react'
+import { TagProps } from './types'
 import * as S from './styles'
-
-export type TagProps = {
-  children: React.ReactNode
-  $isActive?: boolean,
-
-} & LiHTMLAttributes<HTMLLIElement>
-
-
-
-
 
 
 const Tag = ({children, $isActive = false, onClick}: TagProps) =>{

@@ -1,27 +1,27 @@
-import { Dispatch, SetStateAction } from 'react'
-import { Filter } from '../../../App'
 import tags from './tags.json'
+import Tag from './Tag'
 
+import { TagsProps } from './types'
 import * as S from './styles'
 
 
-type TagsProps = {
-  setFilter: Dispatch<SetStateAction<Filter>>
 
-}
+export const Tags = ({filter, onChangeFilter}:TagsProps) =>{
 
-export const Tags = ({setFilter}:TagsProps) =>{
+  const checkIsActive = (id:number):boolean =>{
+    if(!filter.tagId && id === 0){
+      return true
+    }
+
+    return filter.tagId === id
+  }
 
   return(
     <S.TagsWrapper>
       <S.TagsTitle> Busque por tags: </S.TagsTitle>
 
       <S.TagsContent>
-        {tags.map((tag)=> <S.Tag 
-          key={tag.id} 
-          onClick={()=> setFilter((state)=>({...state, tagId:tag.id}))}>
-          {tag.titulo} 
-        </S.Tag> )}
+        {tags.map((tag)=> <Tag key={tag.id} onClick={() => onChangeFilter({tagId:tag.id})} $isActive={checkIsActive(tag.id)}> {tag.titulo}</Tag>)}
       </S.TagsContent>
       
     </S.TagsWrapper>

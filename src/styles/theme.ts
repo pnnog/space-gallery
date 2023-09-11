@@ -16,8 +16,10 @@ const theme = {
   font:{
     family:{
       regular:'GandhiSansRegular',
-      bold:'GandhiSansBold'
+      bold:'GandhiSansBold',
+      alternative: "'Montserrat', 'sans-serif'"
     },
+    
     light:'400',
     normal:'500',
     semibold:'600',
@@ -29,7 +31,12 @@ const theme = {
       xlg:'2.2rem',
       xxlg:'2.4rem'
     } 
-  }   
+  },
+  
+  shadow:{
+    md:'0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+    lg:'0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)'
+  }
 } as const
 
 export default theme 

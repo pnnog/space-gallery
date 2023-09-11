@@ -20,6 +20,13 @@ export const MostPopular =  styled.li<PopularProps>`
   background-size: cover;
   width: 100%;
   border-radius:2rem;
-  height: 16rem;
+
+  height: 18rem;
+
+
+  @media (min-width: 744px){
+    height: 14rem;
+  }
+
 `
 

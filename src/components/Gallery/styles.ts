@@ -30,6 +30,10 @@ export const CardsColumn=  styled.section`
 export const MostPopularColumn=  styled.section`
   max-width: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 2.4rem;
+
   
   @media (min-width: 550px) {
     max-width: 16rem;
